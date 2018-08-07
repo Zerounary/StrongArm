@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>StrongArm</title>
+	<link rel="stylesheet" type="text/css" href="css/sa.css" />
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+	<div id="app" class="flex">
+		<div class="w-1/6 pr-2">
+			<textarea id="one-col-one-row" class="w-full h-screen border border-blue font-light text-blue text-xs">{{colstext}}</textarea>
+		</div>
+		<div class="w-5/6">
+			<div class="flex p-2">
+				<div class="w-1\/6">
+					<button class="border border-blue rounded p-2  font-light text-black" onclick="javascript:parse()">parse</button>
+				</div>
+				<div class="w-1\/6 m-1 p-1 font-light text-blue text-xs">
+					类名：
+					<input class="border border-blue m-1 p-1 text-xs rounded" v-model="className" />
+				</div>
+				<div class="w-1\/6 m-1 p-1 font-light text-blue text-xs">
+					数据库表名：
+					<input class="border border-blue m-1 p-1 text-xs rounded" v-model="tableName" />
+					<svg version="1.1" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000"
+					    enable-background="new 0 0 1000 1000" xml:space="preserve" @click="hisConvert">
+						<metadata> Svg Vector Icons : http://www.sfont.cn </metadata>
+						<g>
+							<path :fill="hisIconFill" d="M777.3,10h107.9v980H777.3V534.5H227.7V990H114.8V10h112.9v426.6h549.6V10z" />
+						</g>
+					</svg>
+				</div>
+				<div class="w-1\/6 m-1 p-1 font-light text-blue text-xs">
+					默认Java类型：
+					<input class="border border-blue m-1 p-1 text-xs rounded" v-model="defaultJavaType" />
+				</div>
+				<div class="w-1\/6 m-1 p-1 font-light text-blue text-xs">
+					默认Database类型：
+					<input class="border border-blue m-1 p-1 text-xs rounded" v-model="defaultDatabaseType" />
+				</div>
+				<div class="w-1\/6 m-1 p-1 font-light text-blue text-xs">
+					jdbcType：
+					<input class="border border-blue m-1 p-1 text-xs rounded" v-model="defaultjdbcType" />
+				</div>
+			</div>
+			<div class="flex">
+				<div class="w-1/3 p-2">
+					<textarea id="tx-java" class="w-full h-64 border border-blue text-black text-xs">{{getJavaProperties}}</textarea>
+					<button class="border border-blue rounded p-2 btn-copy  font-light text-black">java</button>
+				</div>
+				<div class="w-1/3 p-2">
+					<textarea id="tx-database" class="w-full h-64 border border-blue text-black text-xs">{{getDatabaseProperties}}</textarea>
+					<button class="border border-blue rounded p-2 btn-copy  font-light text-black">database</button>
+				</div>
+				<div class="w-1/3 p-2">
+					<textarea id="tx-mybatis" class="w-full h-64 border border-blue text-black text-xs">{{getMybatisStatement}}</textarea>
+					<button class="border border-blue rounded p-2 btn-copy  font-light text-black">mybatis</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/sa.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>
