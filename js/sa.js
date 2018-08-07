@@ -48,7 +48,7 @@ var app = new Vue({
 		},
 		getDatabaseProperties: function () {
 			var pros = new Array();
-			var head = "CREATE TABLE " + this.tableName + "( \n id,";
+			var head = "CREATE TABLE " + this.tableName + "( \n id NUMBER(10),";
 			pros.push(head);
 			var suffix = ' ,';
 			var propType;
